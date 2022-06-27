@@ -1,9 +1,9 @@
-﻿# Botanic - T2A2
- ###R9	A link (URL) to your deployed app:
- Placeholder
- 
- ###R10	A link to your GitHub repository:
- https://github.com/OrangeKami/Chen_Zhang_T2A2
+# Botanic - T2A2
+###R9	A link (URL) to your deployed app:
+Placeholder
+
+###R10	A link to your GitHub repository:
+https://github.com/OrangeKami/Chen_Zhang_T2A2
 
 ##R7	Identification of the problem you are trying to solve by building this particular marketplace app:
 Placeholder
