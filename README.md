@@ -1,4 +1,4 @@
-# Botanic - T2A2
+# Botanic Market - T2A2
 ### R9	A link (URL) to your deployed app:
 Placeholder
 
