@@ -1,7 +1,4 @@
-## Botanic Merket - T2A2
--------------------
-#### by Chen Zhang 
--------------------
+
 ### R9	A link (URL) to your deployed app:
 Heroku: https://botanicmarket.herokuapp.com/
 <br>
