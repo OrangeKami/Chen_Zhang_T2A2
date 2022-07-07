@@ -61,6 +61,7 @@ singin/signup page
 admin page
 ![admin](src/screenshot/botanicmarket.herokuapp.com_listings.png)
 ### Target audience:
+
 The target audience are for anyone with a working smartphone, tablet, desktop devices with connection to the internet. Users don't need to have a credit card for purchasing, as they may want to contact the seller via e-mail or insite message system tp arrange alternative payments and exchange of the goods. As this app is also targetted towards audience with intention to purchase locally, hopefully travelling shouldn't too much of a hassle. Alternatively, the seller and buyer may arrange for items to be delivered if they are unable to get out. For example, stuck in isolation or bad weather.
 
 ### Tech Stack:
@@ -93,11 +94,11 @@ As a user when you singed in, you can buy and sell plants items on market. we wi
 * I want to send a message to the seller about a particular listing.
 * I only want my messages to a seller to be shown to that seller and not be made public.
 * I want to be able to add item to a whtchlist/shopping cart.
-* I want to be able to delete items from the watchlist.
+* I want to be able to delete items from the watchlist/shopping cart.
 * I do not want others to access my account or change my profile information.
 
 ***As a Admin***
-* I want to see a table of all users and can delete them when needed
+* I want to see a table of all users and can delete them when needed.
 * I want to see a table of all listings and can edit them and delete them without any permision.
 
 ## R13	Wireframes for your app:
@@ -112,9 +113,24 @@ As a user when you singed in, you can buy and sell plants items on market. we wi
 ![ERD](src/DBMS%20ER%20diagram%20(UML%20notation).png)
 
 ## R15	Explain the different high-level components (abstractions) in your app:
-placeholder
+
+Botanic Market is a two sided marketplace application that allows the users to buy and sell their plants and its associated items.
+
+A rails applications uses both the Model View Controller (MVC) architecture as well as using convention over configuration principles.
+
+* Controllers (ActionController) acting as a connection between the model, view and receiving information from the web server via the routing table.
+
+* Views (Actionview) are the front-end of the application, the display information to the web server for display to the user's browser using HTML.
+
+Bootstrap - is a simplified and easy way to use CSS. It does so by providing templates and simplified in line styling by writing classes.
+
+* Models (Activerecord) are responsible for the data and logic contained in the database, including validation and manipulation (including retrieving, adding, editing or updating and destroying them).
+
+The database is handled by PostgreSQL,an open source Relational Database Management System. It allows the application to store and process data in table form.
+
 
 ## R16	Detail any third party services that your app will use:
+
 * minimagick (lets users transform images that they're uploading
 * font-awesome-sass - adds font-awesome, which is used to create icons throughout the app, such as the shopping cart icon, magnifying glasses icon, heart icon and others
 * heroku - a container-based cloud Platofrm as a PaaS service which allows the application to be deployed, hosted and managed on their server.
