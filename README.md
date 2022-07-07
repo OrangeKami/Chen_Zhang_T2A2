@@ -83,7 +83,7 @@ As a user when you singed in, you can buy and sell plants items on market. we wi
 * I want to be able to create more than 1 account on the application.
 * I want to update my details on my profile.
 * I want to delete my account at any time.
-* if someone wants to buy my sticker or message me, then they should have a user profile with the app.
+* if someone wants to buy my listing or message me, then they should have a user profile with the app.
 * I do not want others to access my account or change my profile information.
 
 ***As a Buyer***
@@ -101,7 +101,12 @@ As a user when you singed in, you can buy and sell plants items on market. we wi
 * I want to see a table of all listings and can edit them and delete them without any permision.
 
 ## R13	Wireframes for your app:
-placeholder
+![Home](src/Wireframes/Home%20Page.png) 
+![Home port](src/Wireframes/Home%20Page%20portable.png) 
+![Listing](src/Wireframes/Listing%20page.png) 
+![Listing Port](src/Wireframes/Listing%20page%20Portable.png) 
+![Listing details](src/Wireframes/Listing%20Detail%20page.png) 
+![Edit](src/Wireframes/Edit%20Page.png) 
 
 ## R14	An ERD for your app:
 ![ERD](src/DBMS%20ER%20diagram%20(UML%20notation).png)
@@ -110,19 +115,61 @@ placeholder
 placeholder
 
 ## R16	Detail any third party services that your app will use:
-
-* simple form - form styling tool used to style the user log in and sign up forms, and listing creation form, listing editing form, and user profile update form
 * minimagick (lets users transform images that they're uploading
 * font-awesome-sass - adds font-awesome, which is used to create icons throughout the app, such as the shopping cart icon, magnifying glasses icon, heart icon and others
 * heroku - a container-based cloud Platofrm as a PaaS service which allows the application to be deployed, hosted and managed on their server.
 * Bootstrap - to make styling process more efficient and to improve the responsiveness of my website I used the Bootstrap gem for CSS styling.
 * Amazon S3 Web Services for image hosting
+* Devise - The application uses the gem Devise to authenticate users. Unregistered users can only view the index and product listing page, and will be prompted to sign in or register to view any other content. Devise enables this functionality without requiring a sign in or registration method to be defined.
 
 ## R17	Describe your projects models in terms of the relationships (active record associations) they have with each other:
-placeholder
+* Users and Listings
+  * user has many listings 
+  * listings belongs to a User
+* Conversations and messages
+  * conversation has many messages 
+  * message belongs to conversation
+  * User has many coversations
+  * conversation belongs to User
+  * User has many messages
+  * message belongs to user
+
+Watchlist are included in Listing model but not in the table
+* watchlist
+  * watchlist belongs to User
+  * watchlist has many listings
+
+Iamges: photo in listings table and avatar in Users table 
+* listing has one photo attached
+* User has one avatar attached
+
+#### validations
+Most of validations are in User and Listing model
+User Moder
+```
+validates :avatar, file_size: { less_than_or_equal_to: 5.megabytes },
+              file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+validates :email, uniqueness: true 
+validates :username, uniqueness: { case_sensitive: false }
+```
+
+Listing Model
+```
+validates :name, :description, :price, presence: true
+    
+validates :photo, file_size: { less_than_or_equal_to: 5.megabytes },
+              file_content_type: { allow: ['image/jpeg', 'image/png', 'image/gif'] }
+validates :price, :numericality => {:greater_than => 0}, :format => { :with => /\A\d+(?:\.\d{0,2})?\z/ }, length: {maximum: 6}
+validates :description, length: { maximum: 1000, too_long: "Description must be less than %{count} characters."}
+validates :name, length: {maximum: 200, too_long: "Title must be less than %{count} characters." }
+```
 
 ## R18 Discuss the database relations to be implemented in your application:
-placeholder
+
+* The user_id primary key is used as a foreign key in the Conversation, Message, Watchlist and Listing model.
+* In active_storage_attachments and active_storage_variant_records table, they have column blob_id, and it is foreign key, but in active_storage_blobs table, it is primary key.
+* A conversation can have many optional Messages, but if there is a Message, it must belong to a Conversation, which is why it references the conversation_id as a foreign key. A message also refers to the user_id as a foreign key.
+* A listing references the user_id as a foreign key because the app needs to know who created each listing, for authorisation purposes. A user may have many optional listings, or choose to have none. But if a listing exists, then it must reference the user_id so that its author is identified.
 
 ## R19	Provide your database schema design:
 
@@ -239,4 +286,12 @@ end
 ```
 
 ## R20	Describe the way tasks are allocated and tracked in your project:
-placeholder
+Tasks, problems and progress check are managed by Trello. 
+
+Branching in Git was used where a new feature was created in a separate branch before being merged only once it was functioning and deleted after merge.
+
+Trello: <https://trello.com/b/hftnxtjt/marketplace-app>
+
+
+
+![trello](/src/screenshot/Trello/trello.com_b_hftnxtjt_marketplace-app%20(4).png)
