@@ -62,7 +62,7 @@ admin page
 ![admin](src/screenshot/botanicmarket.herokuapp.com_listings.png)
 ### Target audience:
 
-The target audience are for anyone with a working smartphone, tablet, desktop devices with connection to the internet. Users don't need to have a credit card for purchasing, as they may want to contact the seller via e-mail or insite message system tp arrange alternative payments and exchange of the goods. As this app is also targetted towards audience with intention to purchase locally, hopefully travelling shouldn't too much of a hassle. Alternatively, the seller and buyer may arrange for items to be delivered if they are unable to get out. For example, stuck in isolation or bad weather.
+The target audience are for anyone with a working smartphone, tablet, desktop devices with connection to the internet. Users don't need to have a credit card for purchasing, as they may want to contact the seller via e-mail or insite message system to arrange alternative payments and exchange of the goods. As this app is also targetted towards audience with intention to purchase locally, hopefully travelling shouldn't too much of a hassle. Alternatively, the seller and buyer may arrange for items to be delivered if they are unable to get out. For example, stuck in isolation or bad weather.
 
 ### Tech Stack:
 * Front end: HTML5, CSS, SCSS, BOOTSTRAP, Javascript
@@ -151,7 +151,7 @@ The database is handled by PostgreSQL,an open source Relational Database Managem
   * message belongs to user
 
 Watchlist are included in Listing model but not in the table
-Use sessions to store watchlist
+Use sessions to store watchlist, session can be stored by cookies or active record(locally).
 * watchlist
   * watchlist belongs to User
   * watchlist has many listings
@@ -309,6 +309,6 @@ Branching in Git was used where a new feature was created in a separate branch b
 
 Trello: <https://trello.com/b/hftnxtjt/marketplace-app>
 
+![Prepare](src/screenshot/Trello/trello.com_b_hftnxtjt_marketplace-app.png%0D) 
 
-
-![trello](/src/screenshot/Trello/trello.com_b_hftnxtjt_marketplace-app%20(4).png)
+![nearlly finsih](/src/screenshot/Trello/trello.com_b_hftnxtjt_marketplace-app%20(4).png)
