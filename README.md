@@ -151,6 +151,7 @@ The database is handled by PostgreSQL,an open source Relational Database Managem
   * message belongs to user
 
 Watchlist are included in Listing model but not in the table
+Use sessions to store watchlist
 * watchlist
   * watchlist belongs to User
   * watchlist has many listings
